@@ -1,0 +1,126 @@
+// create a user
+POST http://localhost:5000/users
+Content-Type: application/json
+
+{
+  "name": "Alexa",
+  "email": "alexa@gmail.com",
+  "password": "123456",
+  "confPassword": "123456",
+  "role": "user"
+}
+
+###
+// get all user
+GET http://localhost:5000/users
+
+###
+// get user by id
+GET http://localhost:5000/users/a3760416-95e7-414e-bb84-eab171f23b41
+
+###
+// update a user
+PATCH http://localhost:5000/users/a3760416-95e7-414e-bb84-eab171f23b41
+Content-Type: application/json
+
+{
+  "name": "John Updated",
+  "email": "john@gmail.com",
+  "password": "",
+  "confPassword": "",
+  "role": "user"
+}
+
+###
+// delete a user
+DELETE http://localhost:5000/users/a3760416-95e7-414e-bb84-eab171f23b41
+
+###
+// Login admin
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+  "email": "admin@gmail.com",
+  "password": "123456"
+}
+
+###
+// Login user alexa
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+  "email": "alexa@gmail.com",
+  "password": "123456"
+}
+
+###
+// Login user john doe
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+  "email": "john@gmail.com",
+  "password": "123456"
+}
+
+###
+GET http://localhost:5000/me
+
+###
+// Logout
+DELETE  http://localhost:5000/logout
+
+###
+// get all product
+GET http://localhost:5000/products
+
+### Create new product
+POST http://localhost:5000/products
+Content-Type: application/json
+
+{
+  "name": "Product 7",
+  "price": 96710
+}
+
+###
+// request product by id (admin data - E Rahayu)
+GET http://localhost:5000/products/877c32a4-33aa-4629-90e3-9aec39221b73
+
+###
+// request product by id (user data - John Doe)
+GET http://localhost:5000/products/94c13b1a-ebf7-4e5f-a438-4e6865456812
+
+###
+// request product by id (user data -Alexa)
+GET http://localhost:5000/products/d435d04c-80ac-467e-9a5f-4a41264bf41c
+
+###
+// request update product (admin data - E Rahayu)
+PATCH http://localhost:5000/products/877c32a4-33aa-4629-90e3-9aec39221b73
+Content-Type: application/json
+
+{
+  "name": "Product 1 Updated",
+  "price": 1980
+}
+
+###
+// request update product (user data - John Doe)
+PATCH http://localhost:5000/products/94c13b1a-ebf7-4e5f-a438-4e6865456812
+Content-Type: application/json
+
+{
+  "name": "Product 2 User Updated",
+  "price": 19800891
+}
+
+### 
+// request delete product (admin - E Rahayu)
+DELETE http://localhost:5000/products/877c32a4-33aa-4629-90e3-9aec39221b73
+
+###
+// request delete product (user -Alexa)
+DELETE http://localhost:5000/products/d435d04c-80ac-467e-9a5f-4a41264bf41c
